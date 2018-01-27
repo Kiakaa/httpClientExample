@@ -102,12 +102,20 @@ export class AppComponent implements OnInit {
   }
   post()
   {
+
+    let cs :Customer = new Customer();
+      cs.id=1;
+      cs.email="customer001@Gxmail.com";
+      cs.tel="0000001x";
+    
     this.httpClient.post("http://127.0.0.1:3000/customers",
-    {
+    cs
+    /*{
         "name": "Customer004",
         "email": "customer004@email.com",
         "tel": "0000252525"
-    })
+    }*/
+  )
     .subscribe(
         data => {
             console.log("POST Request is successful ", data);
